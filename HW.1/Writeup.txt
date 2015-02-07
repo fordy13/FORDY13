@@ -1,3 +1,5 @@
+My HW1 submission is called blink.c
+
 What was your overall strategy?
 -I used the sample code on the HW1 description and implemented a switch-case state machine in the interrupt handler. I kept most things the same otherwise.
 	Every time the interrupt handler was called it would toggle the LED on or off no matter what state it was coming from or going to.
