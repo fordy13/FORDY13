@@ -27,10 +27,14 @@ ul
 
 div.block {
 	background-color: black;
-	min-height: 50px;
+	height: 50px;
 }
 
 div.list-view {
 	width: 100%;
 	padding: 10px;
+}
+
+li.right {
+	text-align: right;
 }
