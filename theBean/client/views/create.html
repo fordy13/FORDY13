@@ -1,0 +1,71 @@
+<section ng-app="theBeanApp" ng-controller="mainController">
+
+  <!-- Header -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/front">theBean</a>
+      </div>
+    </nav>
+    <!-- div behind navbar -->
+    <div class="block"></div>
+  <!-- END HEADER -->
+  
+  <form name="articleForm" class="form-horizontal col-md-6" role="form" ng-submit="uploadPicture()">
+
+    <!-- this helps me immediately understand when angular is working -->
+    <h1>I can take this out: {{articles.length}} </h1>
+    <img style="max-width:100%" width="150" ng-src="/uploads/{{imgName}}">
+    
+    <!-- Title -->
+    <div class="form-group">
+      <label class="col-md-3">Title</label>
+      <div class="col-md-9">
+        <input name="title" type="text" class="form-control" ng-model="articleTitle" id="title" placeholder="Title..."  required>
+      </div>
+    </div>
+
+    <!-- Subtitle -->
+    <div class="form-group">
+      <label class="col-md-3">Subtitle</label>
+      <div class="col-md-9">
+        <textarea name="subtitle" ng-model="articleSubtitle" id="subtitle" cols="30" rows="2" placeholder="Subtitle..." class="form-control"  required></textarea>
+      </div>
+    </div>
+
+    <!-- Content -->
+    </div>
+    <div class="form-group">
+      <label class="col-md-3">Content</label>
+      <div class="col-md-9">
+        <textarea name="content" ng-model="articleContent" id="content" cols="30" rows="10" placeholder="Content..." class="form-control"  required></textarea>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="form-group">
+      <label class="col-md-3">Image</label>
+      <div class="col-md-9">   
+        <input type="file" nv-file-select uploader="uploader" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-9">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  
+<!-- styles -->
+  <link rel="stylesheet" type="text/css" href="/assets/articles.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- scripts -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.19/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.19/angular-resource.js"></script>
+  <script type="text/javascript" src="/js/local-angular-file-upload.js"></script>
+  <script type="text/javascript" src="/js/app.js"></script>
+  <script type="text/javascript" src="/js/controllers/mainController.js"></script>
+
+</section>

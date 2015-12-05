@@ -1,0 +1,36 @@
+li.card {
+	background-color: white;
+	border-style: solid;
+	border-color: #d9d9d9;
+	border-width: 1px;
+
+	margin:auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	/*width: 40%;*/
+
+	box-shadow: 2px 2px 2px #888888;
+	padding: 10px;
+
+	height: auto;
+}
+
+img.cardImg {
+	max-width:100%;
+	max-height: 200px;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+div.block {
+	background-color: black;
+	min-height: 50px;
+}
+
+div.list-view {
+	width: 100%;
+	padding: 10px;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "theBean",
+  "description": "Site to view and create articles",
+  "main": "",
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-uploadcare": "~0.2.0",
+    "angular": "~1.4.8",
+    "ng-file-upload": "~10.0.2"
+  }
+}
