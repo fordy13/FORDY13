@@ -1,10 +1,10 @@
-
-
 app.controller('mainController', ['$scope','$resource', '$timeout', '$location','$window', 'FileUploader',
 	function ($scope, $resource, $timeout, $location, $window, FileUploader) {
 
 	var Article = $resource('/api/articles')
-	
+  
+  $scope.articles = []
+
 	Article.query(function (results) {
 		$scope.articles = results;
 	});
@@ -66,8 +66,7 @@ app.controller('mainController', ['$scope','$resource', '$timeout', '$location',
       $scope.uploader.uploadAll();
     };
 
-	$scope.articles = []
-
+	
 	$scope.createArticle = function (file){
 
     console.log('createArticle called...');

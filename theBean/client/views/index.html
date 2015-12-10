@@ -9,14 +9,19 @@
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
+  <body ng-controller="userController">
     <!-- Header -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">theBean</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="/create">Create Article</a></li>
+        <li ng-If="isAdmin()"><a href="/create">Create Article</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-If="!(isLoggedIn())"><a href="/signup"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+        <li ng-If="!(isLoggedIn())"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li ng-If="isLoggedIn()"><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
       </ul>
     </nav>
     <!-- div behind navbar -->
@@ -26,21 +31,30 @@
   	<div ng-controller="mainController"> 
   		<h1>There are {{articles.length}} Articles</h1>
       <div class="list-view">
-  		<ul>
-  			<li class="card" ng-repeat="article in articles">
-          <div class="col-xs-6">
-            <p>{{article.date|date}}</p>
-          <h1>{{article.title}}</h1>
-  				<h3>{{article.subtitle}}</h3>
-          </div>
 
-          <div class="col-xs-6">
-           <img class="cardImg" ng-src="/uploads/{{article.imgName}}">
-          </div>
-          <button type="button" ng-click="deleteArticle(article)">Delete</button>
-  			</li>
-  		</ul>
-    </div>
+    		<ul>
+          <!-- Card -->
+    			<li class="container card" ng-repeat="article in articles">
+            <a href="#"><div class="container">
+            <!-- Left Half of Card -->
+            <div class="container col-xs-6">
+              <p>{{article.date|date}}</p>
+              <h1>{{article.title}}</h1>
+      				<h3>{{article.subtitle}}</h3>
+            </div>
+
+            <!-- Right Half of Card -->
+            <div class="container col-xs-6">
+             <img class="cardImg" ng-src="/uploads/{{article.imgName}}">
+             <button ng-If="isAdmin()" type="button" ng-click="deleteArticle(article)">Delete</button>
+            </div>
+          </div></a>
+    			</li>
+    		</ul>
+
+
+
+      </div>
   	</div>
 
 <!-- scripts -->
@@ -50,7 +64,10 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.19/angular-resource.js"></script>
   <script type="text/javascript" src="/js/local-angular-file-upload.js"></script>
   <script type="text/javascript" src="/js/app.js"></script>
+  <script type="text/javascript" src="/js/services/getCurrentUser.js"></script>
   <script type="text/javascript" src="/js/controllers/mainController.js"></script>
+  <script type="text/javascript" src="/js/controllers/userController.js"></script>
+
 
   </body>
 </html>

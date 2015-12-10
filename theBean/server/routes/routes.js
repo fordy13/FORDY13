@@ -1,3 +1,6 @@
+//include user model
+User  = require('../models/user');
+
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
@@ -26,6 +29,12 @@ module.exports = function(app, passport) {
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
+    });
+
+    //Rout For a services that request user statuses
+    app.get('/api/users/getCurrentUser', function (req, res) {
+          res.json(req.user);
+
     });
 
 

@@ -1,5 +1,6 @@
 
 var Article = require('../models/article');
+// var User 	= require('../models/user');
 
 // 53 min on the video
 
@@ -32,4 +33,4 @@ module.exports.uploadPicture = function(req, res) {
   var imgName = req.file.filename;
   res.json({imgName: imgName});
 
-};
+}
