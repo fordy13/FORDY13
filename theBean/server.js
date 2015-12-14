@@ -79,10 +79,10 @@ require('./server/routes/routes.js')(app, passport); // load our routes and pass
 
 
 //REST API
-app.get('/api/articles',    backController.list);
-app.post('/api/articles',   backController.create);
-app.delete('/api/articles', backController.remove);
-app.post('/api/pictures',   backController.uploadPicture);
+app.get('/api/articles',           backController.list);
+app.post('/api/articles',          backController.create);
+app.delete('/api/articles/',    backController.remove);
+app.post('/api/pictures',          backController.uploadPicture);
 
 app.listen(port, function(req, res){
 	console.log('i\'m listening');

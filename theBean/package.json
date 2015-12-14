@@ -4,26 +4,24 @@
   "version": "0.0.1",
   "dependencies": {
     "angular-file-upload": "^2.2.0",
+    "bcrypt-nodejs": "latest",
     "body-parser": "^1.14.1",
     "bootstrap": "^3.3.6",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "ejs": "~0.8.5",
     "express": "^4.13.3",
+    "express-session": "~1.0.0",
+    "method-override": "~1.0.0",
+    "mongodb": "^2.0.52",
     "mongoose": "^4.2.7",
+    "morgan": "~1.0.0",
     "multer": "^1.1.0",
     "ng-file-upload": "^10.0.2",
-
-
-    "ejs" : "~0.8.5",
-    "passport" : "~0.1.17",
-    "passport-local" : "~0.1.6",
-    "passport-facebook" : "~1.0.2",
-    "passport-twitter" : "~1.0.2",
-    "passport-google-oauth" : "~0.1.5",
-    "connect-flash" : "~0.1.1",
-    "bcrypt-nodejs" : "latest",
-
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.0",
-    "method-override": "~1.0.0",
-    "express-session": "~1.0.0"
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-google-oauth": "~0.1.5",
+    "passport-local": "~0.1.6",
+    "passport-twitter": "~1.0.2"
   }
 }

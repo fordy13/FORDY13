@@ -88,7 +88,8 @@ app.controller('mainController', ['$scope','$resource', '$timeout', '$location',
 
 	$scope.deleteArticle = function (article){
 		if (article){
-			article.$remove( function (response) {
+      console.log(article);
+			article.$remove( {id: article._id},  function (response) {//callback removes it from scope array
           for (var i in $scope.articles) {
             if ($scope.articles[i] === article) {
               $scope.articles.splice(i, 1);
@@ -96,7 +97,7 @@ app.controller('mainController', ['$scope','$resource', '$timeout', '$location',
           }
           $location.path('articles');
         });
-		}
+    }
 	};
 
 }]);
