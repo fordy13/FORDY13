@@ -1,0 +1,23 @@
+  		<h1>There are {{articles.length}} Articles</h1>
+      <div class="list-view">
+
+    		<ul>
+          <!-- Card -->
+    			<li class="container card" ng-repeat="article in articles">
+            <a href="#/article/view/{{article._id}}"><div class="container">
+            <!-- Left Half of Card -->
+            <div class="container col-xs-6">
+              <p>{{article.date|date}}</p>
+              <h1>{{article.title}}</h1>
+      				<h3>{{article.subtitle}}</h3>
+            </div>
+
+            <!-- Right Half of Card -->
+            <div class="container col-xs-6">
+             <img class="cardImg" ng-src="/uploads/{{article.imgName}}">
+             <button ng-If="isAdmin()" type="button" ng-click="deleteArticle(article)">Delete</button>
+            </div>
+          </div></a>
+    			</li>
+    		</ul>
+      </div>

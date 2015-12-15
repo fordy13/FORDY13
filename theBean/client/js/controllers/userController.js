@@ -1,5 +1,5 @@
-app.controller('userController', ['$scope','getCurrentUser',
-function ($scope, getCurrentUser) {
+mod.controller('userController', ['$scope','$location','getCurrentUser',
+function ($scope, $location, getCurrentUser) {
 
 	$scope.users = []
 

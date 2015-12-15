@@ -1,5 +1,16 @@
-app.controller('mainController', ['$scope','$resource', '$timeout', '$location','$window', 'FileUploader',
-	function ($scope, $resource, $timeout, $location, $window, FileUploader) {
+mod.controller('mainController', 
+  ['$scope','$resource', '$timeout', '$location','$window', 
+   'FileUploader', '$route', '$routeParams',
+function ($scope, $resource, $timeout, $location, $window, FileUploader, $route, $routeParams) {
+
+
+////DEBUG
+  $scope.$location = $location
+  $scope.$routeParams = $routeParams
+  $scope.$route = $route
+
+
+
 
 	var Article = $resource('/api/articles')
   
@@ -80,22 +91,23 @@ app.controller('mainController', ['$scope','$resource', '$timeout', '$location',
 
 		article.$save(function (result) {
 			$scope.articles.push(result);
-			$scope.articleTitle = '';
-			$scope.articleSubtitle = '';
-			$scope.articleContent = '';
+      $location.path('/');
 		});
+
+
+
 	};
 
 	$scope.deleteArticle = function (article){
 		if (article){
       console.log(article);
-			article.$remove( {id: article._id},  function (response) {//callback removes it from scope array
+			Article.delete( {id: article._id},  function (response) {//callback removes it from scope array
           for (var i in $scope.articles) {
             if ($scope.articles[i] === article) {
               $scope.articles.splice(i, 1);
             }
           }
-          $location.path('articles');
+          $location.path('/');
         });
     }
 	};

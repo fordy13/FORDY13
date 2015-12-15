@@ -11,12 +11,12 @@
   </head>
   <body ng-controller="userController">
     <!-- Header -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav  class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">theBean</a>
+        <a class="navbar-brand" href="#/">theBean</a>
       </div>
       <ul class="nav navbar-nav">
-        <li ng-If="isAdmin()"><a href="/create">Create Article</a></li>
+        <li ng-If="isAdmin()"><a href="#/article/create">Create Article</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li ng-If="!(isLoggedIn())"><a href="/signup"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
@@ -24,49 +24,25 @@
         <li ng-If="isLoggedIn()"><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
       </ul>
     </nav>
-    <!-- div behind navbar -->
     <div class="block"></div>
 
-  	<!-- Articles View -->
-  	<div ng-controller="mainController"> 
-  		<h1>There are {{articles.length}} Articles</h1>
-      <div class="list-view">
-
-    		<ul>
-          <!-- Card -->
-    			<li class="container card" ng-repeat="article in articles">
-            <a href="#"><div class="container">
-            <!-- Left Half of Card -->
-            <div class="container col-xs-6">
-              <p>{{article.date|date}}</p>
-              <h1>{{article.title}}</h1>
-      				<h3>{{article.subtitle}}</h3>
-            </div>
-
-            <!-- Right Half of Card -->
-            <div class="container col-xs-6">
-             <img class="cardImg" ng-src="/uploads/{{article.imgName}}">
-             <button ng-If="isAdmin()" type="button" ng-click="deleteArticle(article)">Delete</button>
-            </div>
-          </div></a>
-    			</li>
-    		</ul>
-
-
-
-      </div>
-  	</div>
+    <!-- u jon -->
+  <div ng-view></div>
 
 <!-- scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.19/angular.min.js"></script>
+   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.19/angular.min.js"></script> -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular-route.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.19/angular-resource.js"></script>
   <script type="text/javascript" src="/js/local-angular-file-upload.js"></script>
   <script type="text/javascript" src="/js/app.js"></script>
   <script type="text/javascript" src="/js/services/getCurrentUser.js"></script>
   <script type="text/javascript" src="/js/controllers/mainController.js"></script>
   <script type="text/javascript" src="/js/controllers/userController.js"></script>
+  
 
 
   </body>
