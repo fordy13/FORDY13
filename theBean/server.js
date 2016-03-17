@@ -14,7 +14,10 @@ console.log('hello, from node');
   flash              = require('connect-flash'),
   morgan             = require('morgan'),
   cookieParser       = require('cookie-parser'),
-  session            = require('express-session');
+  session            = require('express-session'),
+  cors               = require('cors');
+
+app.use(cors());
 
 mongoose.connect(configDB.url);
 app.use(bodyParser());

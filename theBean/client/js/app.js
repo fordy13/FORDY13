@@ -1,4 +1,5 @@
-mod = angular.module('theBeanApp', ['ngResource', 'angularFileUpload', 'ngRoute'])
+mod = angular.module('theBeanApp', 
+	['ngResource', 'angularFileUpload', 'ngRoute'])
 
 	.config(function($routeProvider, $locationProvider) {
 	  $routeProvider
@@ -17,5 +18,9 @@ mod = angular.module('theBeanApp', ['ngResource', 'angularFileUpload', 'ngRoute'
 	  .when('/article/:articleId/edit', {
 	    templateUrl: '/views/edit.html',
 	    controller: 'mainController'
+	  })
+	  .when('/parse', {
+	  	templateUrl: '/views/parse.html',
+	  	controller: 'parseCtrl'
 	  });
 	});

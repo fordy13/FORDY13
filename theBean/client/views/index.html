@@ -17,6 +17,7 @@
       </div>
       <ul class="nav navbar-nav">
         <li ng-If="isAdmin()"><a href="#/article/create">Create Article</a></li>
+        <li><a href="#/parse">Parse It</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li ng-If="!(isLoggedIn())"><a href="/signup"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
@@ -42,6 +43,7 @@
   <script type="text/javascript" src="/js/services/getCurrentUser.js"></script>
   <script type="text/javascript" src="/js/controllers/mainController.js"></script>
   <script type="text/javascript" src="/js/controllers/userController.js"></script>
+  <script type="text/javascript" src="/js/controllers/parseCtrl.js"></script>
   
 
 
