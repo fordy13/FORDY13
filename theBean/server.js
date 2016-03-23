@@ -19,7 +19,7 @@ console.log('hello, from node');
 
 app.use(cors());
 
-mongoose.connect(configDB.url);
+//mongoose.connect(configDB.url);
 app.use(bodyParser());
 
 
